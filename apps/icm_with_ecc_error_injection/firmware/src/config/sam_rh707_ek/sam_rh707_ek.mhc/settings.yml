@@ -1,0 +1,14 @@
+configName: sam_rh707_ek
+folderName: sam_rh707_ek
+format_version: v1.0
+frameworkPath: ..\..\..
+processor: ATSAMRH707F18A
+projectName: icm_with_ecc_error_injection
+settings:
+  PackageFilter: aerospace;aerospace_apps_sam_rh707;aerospace_apps_sam_rh71;audio;bootloader;bootloader_apps_ethernet;bootloader_apps_uart;bsp;core;crypto;csp;csp_apps_sam_e70_s70_v70_v71;csp_apps_sam_rh71;Devices;dev_packs;gfx;gfx_apps;motor_control;net;net_apps_sam_e70_v71;net_apps_sam_rh71;quick_docs
+  FORCE_OPTIMIZATION: 'false'
+  GENERATE_BACKUP: 'true'
+  TRUSTZONE: 'false'
+  CMSISPath: .\dev_packs\arm\CMSIS\5.8.0
+  MERGE_STRATEGY: USER_ALL
+  DFPPath: .\dev_packs\Microchip\SAMRH707_DFP\1.0.28\atdf\ATSAMRH707F18A.atdf
