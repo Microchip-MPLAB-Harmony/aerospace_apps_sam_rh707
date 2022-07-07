@@ -81,19 +81,19 @@ typedef struct
 #define APP_DATA_SIZE_WORDS             (16)
 
 /* Number of Rx buffers in receiver list */
-#define APP_RX_RECV_LIST                (5)
+#define APP_RX_RECV_LIST                5
 
 /* Number of Rx packets in receive buffer */
-#define APP_RX_PACKET_NUM               (15)
+#define APP_RX_PACKET_NUM               14
 
 /* Size of Rx packet in receive buffers in bytes*/
 #define APP_RX_PACKET_SIZE_BYTES        (64*APP_RX_PACKET_NUM)
 
 /* Sent Number of send list */
-#define APP_TX_NUM_SEND                 (15625*5)
+#define APP_TX_NUM_SEND                 (15625)
 
 /* Number of packets per send */
-#define APP_TX_PACKET_PER_SEND          (5)
+#define APP_TX_PACKET_PER_SEND          (25)
 
 /* Number of Tx packets in transmitter list */
 #define APP_TX_NUM_PACKET               (APP_TX_PACKET_PER_SEND)
@@ -135,7 +135,7 @@ volatile app_spw_rx_buffer_list_desc app_rx_buff_list = {0};
 bool app_rx_packet_in_current = false;
 
 /* Store the current average of process time */
-uint32_t app_rx_average_process_time = 0;
+float app_rx_average_process_time = 0;
 
 /* Store the number of values in the average of process time */
 uint32_t app_rx_average_process_time_values = 0;
@@ -651,13 +651,20 @@ int main ( void )
             /* Compute timer time for RX process time calculation */
             uint32_t elapsed_time = TC0_CH2_TimerCounterGet() - start_process;
 
-            app_rx_average_process_time = (app_rx_average_process_time / app_rx_average_process_time_values)
-                    * (app_rx_average_process_time_values / (app_rx_average_process_time_values + 1))
-                    + (elapsed_time / (app_rx_average_process_time_values + 1));
+            if (app_rx_average_process_time_values == 0)
+            {
+                app_rx_average_process_time = (float)elapsed_time;
+            }
+            else
+            {
+                app_rx_average_process_time = ( (app_rx_average_process_time * app_rx_average_process_time_values)
+                    + ((float)elapsed_time) ) / (app_rx_average_process_time_values + 1);
+            }
+            app_rx_average_process_time_values++;
 
             // Clear buffer
             app_rx_packet_status[rx_buff_list.tail] = 0;
-            memset(&(app_rx_buffer_data[rx_buff_list.tail][0]), 0, sizeof(APP_RX_PACKET_SIZE_BYTES));
+            memset(&(app_rx_buffer_data[rx_buff_list.tail][0]), 0, APP_RX_PACKET_SIZE_BYTES);
             memset(&(app_rx_packet_info[rx_buff_list.tail][0]), 0, sizeof(SPW_PKTRX_INFO) * APP_RX_PACKET_NUM);
 
             app_rx_buff_list.tail = (app_rx_buff_list.tail + 1) % APP_RX_RECV_LIST;
