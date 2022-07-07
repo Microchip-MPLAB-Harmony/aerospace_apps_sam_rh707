@@ -130,35 +130,35 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '50'}
+        attributes: {id: flexcom1, value: '25'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_CSR1_SCBR_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '50'}
+        attributes: {id: flexcom1, value: '25'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_CSR2_SCBR_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '50'}
+        attributes: {id: flexcom1, value: '25'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_CSR3_SCBR_VALUE}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '50'}
+        attributes: {id: flexcom1, value: '25'}
   - type: Integer
     attributes: {id: FLEXCOM_SPI_PERIPHERAL_CLOCK}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '50000000'}
+        attributes: {id: flexcom1, value: '25000000'}
   - type: File
     attributes: {id: FLEXCOM_SYS_DEF}
     children:
@@ -207,14 +207,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '50000000'}
+        attributes: {id: flexcom1, value: '25000000'}
   - type: Integer
     attributes: {id: FLEXCOM_TWI_CWGR_CHDIV}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '59'}
+        attributes: {id: flexcom1, value: '28'}
   - type: Integer
     attributes: {id: FLEXCOM_TWI_CWGR_CKDIV}
     children:
@@ -228,7 +228,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '59'}
+        attributes: {id: flexcom1, value: '28'}
+  - type: Integer
+    attributes: {id: FLEXCOM_TWI_TIMEOUT_COUNT_VAL}
+    children:
+    - type: Values
+      children:
+      - type: Dynamic
+        attributes: {id: flexcom1, value: '5000'}
   - type: Boolean
     attributes: {id: FLEXCOM_USART_FIFO_ENABLE}
     children:
@@ -249,7 +256,7 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '0'}
+        attributes: {id: flexcom1, value: '1'}
   - type: KeyValueSet
     attributes: {id: FLEXCOM_USART_MR_USART_MODE}
     children:
@@ -313,14 +320,14 @@ children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '50000000'}
+        attributes: {id: flexcom1, value: '25000000'}
   - type: Integer
     attributes: {id: FLEX_USART_IRDA_FILTER_VAL}
     children:
     - type: Values
       children:
       - type: Dynamic
-        attributes: {id: flexcom1, value: '66'}
+        attributes: {id: flexcom1, value: '31'}
   - type: KeyValueSet
     attributes: {id: FLEX_USART_MR_CHRL}
     children:

@@ -146,7 +146,7 @@ children:
       - type: String
         attributes: {id: text}
         children:
-        - {type: Value, value: '**** HEMC is running at 50000000 Hz ****'}
+        - {type: Value, value: '**** HEMC is running at 25000000 Hz ****'}
   - type: Comment
     attributes: {id: HEMC_HECC_INTERRUPT_ENABLE_COMMENT}
     children:

@@ -124,7 +124,7 @@ void APP_ECC_INJECT_EXT_SRAM_FixCallback(uintptr_t context)
         if ( isInstCacheWasEnabled )
             ICACHE_ENABLE();
 
-        g_areaEccErrCountTable[APP_MEMORY_REGION_EXTERNAL_SRAM].current_fix++;
+        g_areaEccErrCountTable[APP_MEMORY_REGION_EXTERNAL_RAM].current_fix++;
     }
 }
 
@@ -185,7 +185,7 @@ void APP_ECC_INJECT_EXT_SRAM_NoFixCallback(uintptr_t context)
         if ( isInstCacheWasEnabled )
             ICACHE_ENABLE();
 
-        g_areaEccErrCountTable[APP_MEMORY_REGION_EXTERNAL_SRAM].current_nofix++;
+        g_areaEccErrCountTable[APP_MEMORY_REGION_EXTERNAL_RAM].current_nofix++;
     }
 }
 

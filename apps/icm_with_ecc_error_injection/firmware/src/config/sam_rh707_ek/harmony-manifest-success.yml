@@ -4,16 +4,16 @@
 
 
 project: icm_with_ecc_error_injection
-creation_date: 2022-01-17T16:26:24.724+01:00[Europe/Paris]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2022-07-07T11:52:31.343+02:00[Europe/Paris]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
-mhc_mode: IDE            # [IDE|Standalone|Headless]
+mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.8.2
-mplabx_version: v5.50        # if MPLAB X plugin only
-plugin_version: v3.6.4        # if MPLAB X plugin only
-compiler: XC32 (3.01)
+mplabx_version: NA        # if MPLAB X plugin only
+plugin_version: NA        # if MPLAB X plugin only
+compiler: xc32
 
 modules:
-    - {name: "csp", version: "unknown"}
-    - {name: "dev_packs", version: "unknown"}
+    - {name: "csp", version: "v3.13.0"}
+    - {name: "dev_packs", version: "v3.13.0"}
     - {name: "aerospace", version: "unknown"}
 

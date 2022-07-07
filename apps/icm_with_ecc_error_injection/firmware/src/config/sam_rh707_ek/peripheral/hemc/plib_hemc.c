@@ -80,13 +80,13 @@ void HEMC_Initialize( void )
     uint8_t eccEnableDefault = ( (HEMC_REGS->HEMC_CR_NCS0 & HEMC_CR_NCS0_ECC_ENABLE_Msk) >> HEMC_CR_NCS0_ECC_ENABLE_Pos);
 
     /* Enable NCS0 configuration modification through registers */
-    HEMC_REGS->HEMC_CR_NCS0 |= HEMC_CR_NCS0_WRITE_ECC_CONF(1);
+    HEMC_REGS->HEMC_CR_NCS0 |= HEMC_CR_NCS0_WRITE_ECC_CONF(1U);
 
-    HEMC_REGS->HEMC_CR_NCS0 = HEMC_CR_NCS0_TYPE(0) |
-                              HEMC_CR_NCS0_ADDBASE(0x0) |
-                              HEMC_CR_NCS0_BANKSIZE(0x1F) |
-                              HEMC_CR_NCS0_WRITE_ECC_CONF(1) |
-                              HEMC_CR_NCS0_ECC_ENABLE(eccEnableDefault);
+    HEMC_REGS->HEMC_CR_NCS0 = HEMC_CR_NCS0_TYPE(0U) |
+                              HEMC_CR_NCS0_ADDBASE(0x0U) |
+                              HEMC_CR_NCS0_BANKSIZE(0x1FU) |
+                              HEMC_CR_NCS0_WRITE_ECC_CONF(1U) |
+                              HEMC_CR_NCS0_ECC_ENABLE((uint32_t)eccEnableDefault);
 
     HEMC_REGS->HEMC_CR_NCS1 = HEMC_CR_NCS1_TYPE(0) |
                               HEMC_CR_NCS1_ADDBASE(0x40) |
