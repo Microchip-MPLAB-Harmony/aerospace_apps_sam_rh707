@@ -65,7 +65,7 @@ extern "C" {
 // Section: Interface Routines
 // *****************************************************************************
 // *****************************************************************************
-#define FLEXCOM1_USART_FrequencyGet()    (uint32_t)(25000000UL)
+#define FLEXCOM1_USART_FrequencyGet()    (uint32_t)(50000000UL)
 
 /****************************** FLEXCOM1 USART API *********************************/
 
@@ -87,6 +87,8 @@ bool FLEXCOM1_USART_TransmitterIsReady( void );
 
 bool FLEXCOM1_USART_ReceiverIsReady( void );
 
+
+bool FLEXCOM1_USART_TransmitComplete( void );
 
 
 // DOM-IGNORE-BEGIN

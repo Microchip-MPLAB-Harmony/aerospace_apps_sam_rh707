@@ -102,7 +102,7 @@ void FLEXCOM1_USART_Initialize( void )
     FLEXCOM1_REGS->FLEX_US_TTGR = 0;
 
     /* Configure FLEXCOM1 USART mode */
-    FLEXCOM1_REGS->FLEX_US_MR = ( FLEX_US_MR_USART_MODE_NORMAL | FLEX_US_MR_USCLKS_MCK | FLEX_US_MR_CHRL_8_BIT | FLEX_US_MR_PAR_NO | FLEX_US_MR_NBSTOP_1_BIT | (1 << FLEX_US_MR_OVER_Pos));
+    FLEXCOM1_REGS->FLEX_US_MR = ( FLEX_US_MR_USART_MODE_NORMAL | FLEX_US_MR_USCLKS_MCK | FLEX_US_MR_CHRL_8_BIT | FLEX_US_MR_PAR_NO | FLEX_US_MR_NBSTOP_1_BIT | (0 << FLEX_US_MR_OVER_Pos));
 
     /* Configure FLEXCOM1 USART Baud Rate */
     FLEXCOM1_REGS->FLEX_US_BRGR = FLEX_US_BRGR_CD(27) | FLEX_US_BRGR_FP(1);
@@ -331,4 +331,16 @@ bool FLEXCOM1_USART_ReceiverIsReady( void )
     }
 }
 
+
+bool FLEXCOM1_USART_TransmitComplete( void )
+{
+    bool status = false;
+
+    if (FLEXCOM1_REGS->FLEX_US_CSR & FLEX_US_CSR_TXEMPTY_Msk)
+    {
+        status = true;
+    }
+
+    return status;
+}
 

@@ -19,7 +19,7 @@ children:
       - type: Dynamic
         attributes: {id: ip1553, value: '12000000'}
   - type: Comment
-    attributes: {id: IP1553_CLOCK_INVALID_COMMENT}
+    attributes: {id: IP1553_INTERRUPT_ENABLE_COMMENT}
     children:
     - type: Attributes
       children:
