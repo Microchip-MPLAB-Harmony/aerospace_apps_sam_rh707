@@ -1,18 +1,18 @@
 # SpaceWire RMAP Loopback Example
 
-This example shows how configure the SpaceWire peripheral to configure the RMAP module, send an RMAP command with the packet transceiver and receive the RMAP reply with the packet receiver.
+This example shows how to configure the SpaceWire peripheral to configure the RMAP module, send an RMAP command with the packet transceiver and receive the RMAP reply with the packet receiver.
 
 **Building The Application**
 
 The parent folder for all the MPLABX IDE projects for this application is given below:
 
-**Application Path**: aerospace\\apps\\spw\\spw\_rmap\_loopback\\firmware
+**Application Path**: aerospace\apps\spw\spw_rmap_loopback\firmware
 
 To build the application, refer to the table below and open the appropriate project file in MPLABX IDE.
 
-|Project Name|Description|
-|------------|-----------|
-|sam\_rh707\_ek.X|SAM RH707 Evaluation Kit board|
+| Project Name  | Description   |
+| ------------- |:-------------:|
+| sam_rh707_ek.X | SAM RH707 Evaluation Kit board  |
 
 **MPLAB Harmony Configurations**
 
@@ -20,56 +20,38 @@ Refer to the MHC project graph for the components used and the respective config
 
 **Hardware Setup**
 
-1.  Project sam\_rh707\_ek.X
-
-    -   Hardware Used
-
-        -   SAM RH707 Evaluation Kit
-
-        -   SpaceWire cable
-
-    -   Hardware Setup
-
-        -   Connect the USB port \(USB DEBUG\) on the board to the computer using a micro USB cable.
-
-            -   If the board embedded debugger is not used, connect the debugger probe on DEBUG connector \(J5\).
-
-        -   Connect the two SpaceWire link on the board to each other using a SpaceWire cable.
+1. Project sam_rh707_ek.X
+    * Hardware Used
+        * SAM RH707 Evaluation Kit
+        * SpaceWire cable
+    * Hardware Setup
+        * Connect the USB port (USB DEBUG) on the board to the computer using a micro USB cable.
+            * If the board embedded debugger is not used, connect the debugger probe on DEBUG connector (J5).
+        * Connect the two SpaceWire link on the board to each other using a SpaceWire cable.
 
         *Note* : This example can also be tested with SpaceWire links configured in TTL:
-
-        -   Pin configuration must be modified in Harmony Configuration to set unused pin in an other function than SpaceWire.
-
-        -   Evaluation kit board must be modified like described in the user guide.
-
+        * Pin configuration must be modified in Harmony Configuration to set unused pin in an other function than SpaceWire.
+        * Evaluation kit board must be modified like described in the user guide.
 
 **Running The Application**
 
-1.  Open the Terminal application \(Ex.:Tera term\) on the computer.
-
-2.  Connect to the Virtual COM port and configure the serial settings as follows:
-
-    -   Baud : 115200
-
-    -   Data : 8 Bits
-
-    -   Parity : None
-
-    -   Stop : 1 Bit
-
-    -   Flow Control : None
-
-3.  Build and Program the application using the MPLABX IDE.
-
-4.  See the following message in the console.
+1. Open the Terminal application (Ex.:Tera term) on the computer.
+2. Connect to the Virtual COM port and configure the serial settings as follows:
+    * Baud : 115200
+    * Data : 8 Bits
+    * Parity : None
+    * Stop : 1 Bit
+    * Flow Control : None
+3. Build and Program the application using the MPLABX IDE.
+4. See the following message in the console.
 
     ```console
     -----------------------------------------------------------
-    
+
       SPW RMAP loopback example
-    
+
     -----------------------------------------------------------
-    
+
     Wait for both SWP link switch to run state
         SPW Link in Run state
     Initialize packet receiver to receive 1 packet(s) of 8 bytes
@@ -88,7 +70,3 @@ Refer to the MHC project graph for the components used and the respective config
             30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 3A, 3B, 3C, 3D, 3E, 3F,
       RMAP read command reply with status OK
     ```
-
-
-**Parent topic:**[Harmony 3 TCP/IP Application for SAM RH707 Family](GUID-11B5CA6D-0250-4380-A3C0-C9246E83F16F.md)
-
