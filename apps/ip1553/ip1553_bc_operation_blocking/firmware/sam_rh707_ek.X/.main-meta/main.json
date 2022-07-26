@@ -4,7 +4,7 @@
 	"content": {
 		"metaDataVersion": "1.1.0",
 		"name": "com.microchip.mcu32.mplabx.project.aerospace_apps_sam_rh707_ip1553_bc_operation_blocking",
-		"version": "3.3.0",
+		"version": "3.0.0",
 		"displayName": "IP1553 Bus Controller operation blocking Example for SAM RH707",
 		"projectName": "ip1553_bc_operation_blocking_sam_rh707_ek",
 		"shortDescription": "This example shows how to start the IP1553 module in Bus Controller mode and issue data transfer commands in a blocking manner.",
@@ -15,16 +15,16 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.00.0"
+				"semverRange": ">=4.10.0"
 			}
 		],
 		"dfp": {
 			"name": "SAMRH707_DFP",
-			"semverRange": "^1.0.28"
+			"semverRange": "^1.0.43"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.8.2"
+			"semverRange": ">=3.8.5"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",

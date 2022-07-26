@@ -15,16 +15,16 @@
 		"compiler": [
 			{
 				"name": "XC32",
-				"semverRange": ">=4.00.0"
+				"semverRange": ">=4.10.0"
 			}
 		],
 		"dfp": {
 			"name": "SAMRH707_DFP",
-			"semverRange": "^1.0.28"
+			"semverRange": "^1.0.43"
 		},
 		"configurator": {
 			"name": "MHC",
-			"semverRange": ">=3.8.2"
+			"semverRange": ">=3.8.5"
 		},
 		"device": {
 			"metaDataVersion": "1.0.0",
