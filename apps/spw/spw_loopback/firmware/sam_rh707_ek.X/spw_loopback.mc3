@@ -5590,7 +5590,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\initialization.c</file>
-         <hash>698bcf9de404618135300162f31e7bbfca3a9f77a379706eaa27927fda9492b6</hash>
+         <hash>22b8a74e880f67f8bb2244b26df75f5ae2ea93bcc41193e01071d96bd54a636e</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMRH707F18A_DFP\instance\spw.h</file>
@@ -5646,7 +5646,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\pio\plib_pio.c</file>
-         <hash>cf08cdb3b2352970c29484218e17a65056bd408a82e625110c0f4f58ebd035fc</hash>
+         <hash>6bd77e863eef50011eea620ec50d0538a9b3f35d9b367e5ee9daac51d5f84f89</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMRH707F18A_DFP\instance\tc0.h</file>
