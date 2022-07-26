@@ -38,7 +38,8 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;ComponentGraph dnOrder=&quot;0&quot; id=&quot;__ROOTVIEW&quot;&gt;
+    &lt;GraphSettings canvasHeight=&quot;160&quot; canvasWidth=&quot;433&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;ComponentGraph dnOrder=&quot;1&quot; id=&quot;__ROOTVIEW&quot;&gt;
       &lt;ElementPositions dnOrder=&quot;0&quot;&gt;
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;cmsis&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;220&quot; y=&quot;20&quot;/&gt;
@@ -48,7 +49,6 @@
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;stdio&quot; x=&quot;151&quot; y=&quot;66&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
-    &lt;GraphSettings canvasHeight=&quot;160&quot; canvasWidth=&quot;433&quot; dnOrder=&quot;1&quot;/&gt;
   &lt;/UserData&gt;
 &lt;/UserData&gt;
 </value>
@@ -2699,7 +2699,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\initialization.c</file>
-         <hash>a5e5b050b92ab111dc600ed1e255defbe73aa21d94c1b63b8744bc7b74a5c32f</hash>
+         <hash>a1e0322f7fd04b5cd6072c57601ac8159ee8f0c241c703e40df461f7e34a4948</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMRH707F18A_DFP\instance\spw.h</file>
@@ -2743,7 +2743,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\pio\plib_pio.c</file>
-         <hash>60fbee27cd6323c1fccf79485594c5547e909984632ddeb8de79f0ef96401c1c</hash>
+         <hash>aaf724fe33ffd75512ebb10ce67ce94e17271c293506322bdeb901abbe4b0e83</hash>
       </entry>
       <entry>
          <file>..\src\packs\ATSAMRH707F18A_DFP\instance\tc0.h</file>
