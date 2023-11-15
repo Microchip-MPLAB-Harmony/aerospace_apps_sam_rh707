@@ -46,7 +46,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-static HEMC_OBJ hemcObj;
+volatile static HEMC_OBJ hemcObj;
 
 // *****************************************************************************
 // *****************************************************************************
@@ -55,11 +55,11 @@ static HEMC_OBJ hemcObj;
 // *****************************************************************************
 
 
-void HSMC_Initialize( void )
+
+
+
+static void HSMC_Initialize( void )
 {
-
-
-
     /* Chip Select CS1 Timings */
     /* Setup HSMC SETUP register */
     HSMC_REGS->HSMC_CS[1].HSMC_SETUP = HSMC_SETUP_NWE_SETUP(2) | HSMC_SETUP_NCS_WR_SETUP(2) | HSMC_SETUP_NRD_SETUP(2) | HSMC_SETUP_NCS_RD_SETUP(2);
@@ -73,11 +73,12 @@ void HSMC_Initialize( void )
     /* Setup HSMC MODE register */
     HSMC_REGS->HSMC_CS[1].HSMC_MODE = HSMC_MODE_EXNW_MODE(0) | HSMC_MODE_DBW(0)   | HSMC_MODE_RMW_ENABLE_Msk;
 
+
 }
 void HEMC_Initialize( void )
 {
     /* Read NCS0 Pin configuration for HECC */
-    uint8_t eccEnableDefault = ( (HEMC_REGS->HEMC_CR_NCS0 & HEMC_CR_NCS0_ECC_ENABLE_Msk) >> HEMC_CR_NCS0_ECC_ENABLE_Pos);
+    uint8_t eccEnableDefault = (uint8_t)( (HEMC_REGS->HEMC_CR_NCS0 & HEMC_CR_NCS0_ECC_ENABLE_Msk) >> HEMC_CR_NCS0_ECC_ENABLE_Pos);
 
     /* Enable NCS0 configuration modification through registers */
     HEMC_REGS->HEMC_CR_NCS0 |= HEMC_CR_NCS0_WRITE_ECC_CONF(1U);
@@ -95,10 +96,10 @@ void HEMC_Initialize( void )
     HSMC_Initialize();
 
     /* For RAM memories on NCS1, perform memory initialization of ECC check bit */
-    memset((void*)(0x60100000), 0x00, 0x66660);
-    if (DATA_CACHE_IS_ENABLED())
+    (void) memset((uint32_t*)(0x60100000), 0x00, 0x66660);
+    if (DATA_CACHE_IS_ENABLED() != 0U)
     {
-        DCACHE_CLEAN_INVALIDATE_BY_ADDR((void*)(0x60100000), 0x66660);
+        DCACHE_CLEAN_INVALIDATE_BY_ADDR((uint32_t*)(0x60100000), 0x66660);
     }
 
     /* Wait all memory is zeroized and clear previous interrupts when memory ECC wasn't initialized */
@@ -112,6 +113,121 @@ void HEMC_Initialize( void )
     HEMC_REGS->HEMC_HECC_IER = (HEMC_HECC_IER_MEM_FIX_Msk | HEMC_HECC_IER_MEM_NOFIX_Msk);
 
 } /* HEMC_Initialize */
+
+// *****************************************************************************
+/* Function:
+    void HEMC_DisableECC(uint8_t chipSelect);
+
+   Summary:
+    Disable the ECC for the given chip select.
+
+   Precondition:
+    None.
+
+   Parameters:
+    chipSelect - The chip select for which ECC is disabled.
+
+   Returns:
+    True if ECC was disable for this chip select, False otherwise.
+*/
+bool HEMC_DisableECC(uint8_t chipSelect)
+{
+    bool ret = false;
+    volatile uint32_t* pHemcCrNcsReg = NULL;
+    uint32_t hemcCrEnableMask = 0;
+    bool DisEccCheck = true;
+
+    switch (chipSelect)
+    {
+        case 0:
+        {
+            pHemcCrNcsReg = &(HEMC_REGS->HEMC_CR_NCS0);
+            hemcCrEnableMask = HEMC_CR_NCS0_ECC_ENABLE_Msk;
+            break;
+        }
+        case 1:
+        {
+            pHemcCrNcsReg = &(HEMC_REGS->HEMC_CR_NCS1);
+            hemcCrEnableMask = HEMC_CR_NCS1_ECC_ENABLE_Msk;
+            break;
+        }
+        default:
+            DisEccCheck = false;
+            break;
+    }
+
+    if( DisEccCheck == false)
+    {
+        return DisEccCheck;
+    }
+    if ( (*pHemcCrNcsReg & hemcCrEnableMask) == hemcCrEnableMask)
+    {
+        *pHemcCrNcsReg &= ~(hemcCrEnableMask);
+        while((*pHemcCrNcsReg & hemcCrEnableMask) == hemcCrEnableMask)
+        {
+            /* Nothing to do */
+        }
+        ret = true;
+    }
+
+    return ret;
+}
+
+// *****************************************************************************
+/* Function:
+    void HEMC_EnableECC(uint8_t chipSelect);
+
+   Summary:
+    Enable the ECC for the given chip select.
+
+   Precondition:
+    None.
+
+   Parameters:
+    None.
+
+   Returns:
+    True if ECC was enable for this chip select, False otherwise.
+*/
+bool HEMC_EnableECC(uint8_t chipSelect)
+{
+    bool ret = false, EnEccCheck = true;
+    volatile uint32_t* pHemcCrNcsReg = NULL;
+    uint32_t hemcCrEnableMask = 0;
+
+    switch (chipSelect)
+    {
+        case 0:
+        {
+            pHemcCrNcsReg = &(HEMC_REGS->HEMC_CR_NCS0);
+            hemcCrEnableMask = HEMC_CR_NCS0_ECC_ENABLE_Msk;
+            break;
+        }
+        case 1:
+        {
+            pHemcCrNcsReg = &(HEMC_REGS->HEMC_CR_NCS1);
+            hemcCrEnableMask = HEMC_CR_NCS1_ECC_ENABLE_Msk;
+            break;
+        }
+        default:
+             EnEccCheck = false;
+             break;
+    }
+
+    if( EnEccCheck == false)
+    {
+        return EnEccCheck;
+    }
+
+    *pHemcCrNcsReg |= hemcCrEnableMask;
+    while((*pHemcCrNcsReg & hemcCrEnableMask) != hemcCrEnableMask)
+    {
+        /* Nothing to do */
+    }
+    ret = true;
+
+    return ret;
+}
 
 // *****************************************************************************
 /* Function:
@@ -230,8 +346,7 @@ void HEMC_HeccResetCounters(void)
 
   Example:
     <code>
-        // Refer to the description of the HEMC_CALLBACK data type for
-        // example usage.
+
     </code>
 
   Remarks:
@@ -281,8 +396,7 @@ void HEMC_FixCallbackRegister(HEMC_CALLBACK callback, uintptr_t contextHandle)
 
   Example:
     <code>
-        // Refer to the description of the HEMC_CALLBACK data type for
-        // example usage.
+
     </code>
 
   Remarks:
@@ -325,12 +439,14 @@ void HEMC_NoFixCallbackRegister(HEMC_CALLBACK callback, uintptr_t contextHandle)
     instance interrupt is enabled. If peripheral instance's interrupt is not
     enabled user need to call it from the main while loop of the application.
 */
-void HEMC_INTFIX_InterruptHandler(void)
+void __attribute__((used)) HEMC_INTFIX_InterruptHandler(void)
 {
 
     if (hemcObj.fix_callback != NULL)
     {
-        hemcObj.fix_callback(hemcObj.fix_context);
+        uintptr_t fix_context = hemcObj.fix_context;
+
+        hemcObj.fix_callback(fix_context);
     }
 }
 
@@ -359,12 +475,14 @@ void HEMC_INTFIX_InterruptHandler(void)
     instance interrupt is enabled. If peripheral instance's interrupt is not
     enabled user need to call it from the main while loop of the application.
 */
-void HEMC_INTNOFIX_InterruptHandler(void)
+void __attribute__((used)) HEMC_INTNOFIX_InterruptHandler(void)
 {
 
     if (hemcObj.nofix_callback != NULL)
     {
-        hemcObj.nofix_callback(hemcObj.nofix_context);
+        uintptr_t nofix_context = hemcObj.nofix_context;
+
+        hemcObj.nofix_callback(nofix_context);
     }
 }
 

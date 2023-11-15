@@ -49,6 +49,8 @@ static bool checkGpnvmWordCrc(void)
 
     /* Read GPNVM bits */
     HEFC_REGS->HEFC_FCR = (HEFC_FCR_FKEY(0x5AU) | HEFC_FCR_FCMD_GGPB);
+    __DSB();
+    __ISB();
     while ((HEFC_REGS-> HEFC_FSR & HEFC_FSR_FRDY_Msk) != HEFC_FSR_FRDY_Msk)
     {
         /* Waiting for the HEFC Ready state */
@@ -67,7 +69,7 @@ static bool checkGpnvmWordCrc(void)
 
     crc_dscr.ul_tr_addr = (uint32_t) &gpnvm_table[1];
     /* Transfer width: word, interrupt enable, 1 word size */
-    crc_dscr.ul_tr_ctrl = (2U << 24) | 1U;
+    crc_dscr.ul_tr_ctrl = (2UL << 24) | 1U;
 
     __DSB();
     __ISB();
@@ -153,8 +155,10 @@ static void CLK_MainClockInitialize(void)
        Switch Main Clock (MAINCK) to External signal on XIN pin */
     PMC_REGS->CKGR_MOR |= CKGR_MOR_KEY_PASSWD | CKGR_MOR_MOSCSEL_Msk;
 
-    /* Wait until MAINCK is switched to External Clock Signal (XIN pin) */
-    while ( (PMC_REGS->PMC_SR & PMC_SR_MOSCSELS_Msk) != PMC_SR_MOSCSELS_Msk);
+    while ( (PMC_REGS->PMC_SR & PMC_SR_MOSCSELS_Msk) != PMC_SR_MOSCSELS_Msk)
+    {
+        /* Wait until MAINCK is switched to External Clock Signal (XIN pin) */
+    }
 
     /* Disable the RC Oscillator */
     PMC_REGS->CKGR_MOR = CKGR_MOR_KEY_PASSWD | (PMC_REGS->CKGR_MOR & ~CKGR_MOR_MOSCRCEN_Msk);
