@@ -4,7 +4,7 @@
 
 
 project: ip1553_rt_operation_interrupt
-creation_date: 2022-07-26T14:18:15.127+02:00[Europe/Paris]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2023-12-13T17:13:37.335+01:00[Europe/Paris]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mhc_mode: Standalone            # [IDE|Standalone|Headless]
 mhc_version: v3.8.5
@@ -13,7 +13,7 @@ plugin_version: NA        # if MPLAB X plugin only
 compiler: xc32
 
 modules:
-    - {name: "csp", version: "v3.13.1"}
-    - {name: "dev_packs", version: "v3.13.0"}
-    - {name: "aerospace", version: "v3.4.0"}
+    - {name: "csp", version: "unknown"}
+    - {name: "dev_packs", version: "unknown"}
+    - {name: "aerospace", version: "unknown"}
 
