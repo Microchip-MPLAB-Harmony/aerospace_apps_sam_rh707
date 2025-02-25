@@ -152,6 +152,25 @@
         </logicalFolder>
       </logicalFolder>
     </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="sam_rh707_ek.mhc" projectFiles="true">
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/cmsis.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/core.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/dfp.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/flexcom1.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/GraphSettings.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/project.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/settings.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/spw.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/stdio.yml</itemPath>
+        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/tc0.yml</itemPath>
+      </logicalFolder>
+      <itemPath>Makefile</itemPath>
+      <itemPath>../src/config/sam_rh707_ek/harmony-manifest-success.yml</itemPath>
+      <itemPath>spw_loopback.mc3</itemPath>
+    </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
                    projectFiles="true">
@@ -208,25 +227,6 @@
       <itemPath>../src/main.c</itemPath>
       <itemPath>../src/config/sam_rh707_ek/pin_configurations.csv</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <logicalFolder name="f1" displayName="sam_rh707_ek.mhc" projectFiles="true">
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/cmsis.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/core.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/dfp.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/flexcom1.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/GraphSettings.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/project.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/spw.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/stdio.yml</itemPath>
-        <itemPath>../src/config/sam_rh707_ek/sam_rh707_ek.mhc/tc0.yml</itemPath>
-      </logicalFolder>
-      <itemPath>Makefile</itemPath>
-      <itemPath>../src/config/sam_rh707_ek/harmony-manifest-success.yml</itemPath>
-      <itemPath>spw_loopback.mc3</itemPath>
-    </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../src</Elem>
@@ -241,12 +241,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>noID</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.35</languageToolchainVersion>
+        <languageToolchainVersion>4.50</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="SAMRH707_DFP" vendor="Microchip" version="1.2.156"/>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
+        <pack name="SAMRH707_DFP" vendor="Microchip" version="1.2.156"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -981,6 +981,7 @@
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="freeze.timers" value="false"/>
@@ -1037,6 +1038,8 @@
         <property key="programoptions.preserveeeprom.ranges" value=""/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
         <property key="programoptions.preserveprogrammemory" value="false"/>
+        <property key="programoptions.preserveprogrammemory.ranges"
+                  value="0x10000000-0x1001ffff"/>
         <property key="programoptions.preserveprogramrange" value="false"/>
         <property key="programoptions.preserveprogramrange.end" value="0x1001ffff"/>
         <property key="programoptions.preserveprogramrange.ranges"
@@ -1501,6 +1504,7 @@
         <property key="communication.speed" value="4"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
         <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="event.recorder.debugger.behavior" value="Running"/>
         <property key="event.recorder.enabled" value="false"/>
         <property key="event.recorder.scvd.files" value=""/>
         <property key="jlink.override" value=""/>
@@ -1518,7 +1522,7 @@
         <property key="programoptions.eraseb4program" value="false"/>
         <property key="programoptions.preservebootflash" value="false"/>
         <property key="programoptions.preserveprogrammemory" value="false"/>
-        <property key="programoptions.preserveprogramrange.ranges"
+        <property key="programoptions.preserveprogrammemory.ranges"
                   value="0x10000000-0x1001ffff"/>
         <property key="programoptions.resetafterprogram" value="true"/>
         <property key="script.has_reset" value="true"/>

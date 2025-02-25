@@ -1,4 +1,4 @@
-<config configName="sam_rh707_ek" projectName="spw_loopback" configVersion="1.1" device="ATSAMRH707F18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
+<config configName="sam_rh707_ek" projectName="spw_loopback" configVersion="1.1" device="ATSAMRH707F18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -31,7 +31,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.4.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.4"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -51,10 +51,10 @@
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;cmsis&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;220&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;flexcom1&quot; x=&quot;21&quot; y=&quot;66&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;spw&quot; x=&quot;306&quot; y=&quot;82&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;stdio&quot; x=&quot;156&quot; y=&quot;80&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tc0&quot; x=&quot;24&quot; y=&quot;166&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;flexcom1&quot; x=&quot;17&quot; y=&quot;71&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;spw&quot; x=&quot;305&quot; y=&quot;87&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;stdio&quot; x=&quot;157&quot; y=&quot;61&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;tc0&quot; x=&quot;21&quot; y=&quot;160&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -5549,7 +5549,7 @@
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>..\src\config\sam_rh707_ek\definitions.h</file>
-         <hash>b5b007ef23b5e984dee1115d6957bac0621c4247e45b7bc04455b5021c0592e5</hash>
+         <hash>f9a0761efa0afc7d5edee38860a7d9438e37ab6b52d77fdf0d794174ccc03a6b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\device.h</file>
@@ -5565,11 +5565,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\exceptions.c</file>
-         <hash>1fd383302c4cdf1cc6a804aa03b8abe8c1e5e5e9ea3450438c34dcea441e6b34</hash>
+         <hash>de00e84d46e0d8933ee2fae9d699e08456443d4f80ac78f87edada9c35a9d15f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\initialization.c</file>
-         <hash>cf6206e0a1372da6f57bd91e1eb78cfe8740b1e9696783bde1510e705585f21e</hash>
+         <hash>9b97a99b70c673355815c5e29518329d0afd6181b4497f9e80af6923638e69b1</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\interrupts.c</file>
@@ -5593,7 +5593,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\flexcom\usart\plib_flexcom1_usart.c</file>
-         <hash>d37a48d6d364d006a0c4963772fdb14d58c37840b0d20d731776262fc1ce63ba</hash>
+         <hash>64d70028c012e549274628188de4e02ed1013f1c126379cf73cecfd548234c29</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\flexcom\usart\plib_flexcom1_usart.h</file>
@@ -5601,7 +5601,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\flexcom\usart\plib_flexcom_usart_local.h</file>
-         <hash>d7d8e1bab1992fd5471cbee03dfbe206d761d9e622c721c08f3546ef7d335b64</hash>
+         <hash>44c68d2efb80f2837e7bbcb39073972a6672c61ea2daf8f63e8c7e7da6e1208c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\matrix\plib_matrix.c</file>
@@ -5613,7 +5613,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\mpu\plib_mpu.c</file>
-         <hash>bf1248a8b073c5bc4ee5a888cc4ee7ae39cd0178c5e1697b8a6d03d8b97b50cf</hash>
+         <hash>7b7486666c82f894cfbe9e3ae206cfcfdeaca1604187f44ab5354a24fa07b5f7</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\mpu\plib_mpu.h</file>
@@ -5625,11 +5625,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\nvic\plib_nvic.c</file>
-         <hash>eef27459c8340a12e9e625d0111e79d5cdecb0392bec83acb12bd44b92c61a10</hash>
+         <hash>701e0a0dc76fc01965e20d7ee6be883f46da089433c582be899f3adbab959f5b</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\nvic\plib_nvic.h</file>
-         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
+         <hash>9936ac782115af41003255283fa2f603f4ff2212d16275b7c80ea8d067a9e208</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\pio\plib_pio.c</file>
@@ -5689,7 +5689,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\tc\plib_tc0.c</file>
-         <hash>377ae2e98cf0d24424c9523d1d0651b6e9a02de1257cfcb49c3395b77f6530c2</hash>
+         <hash>10fefd3b90fdb1d27c37280e536a94be2d230c725bfb3a93ad316d203842183a</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\tc\plib_tc0.h</file>
@@ -6041,7 +6041,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
+         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm7.h</file>
