@@ -1,4 +1,4 @@
-<config configName="sam_rh707_ek" projectName="ip1553_bc_operation_blocking" configVersion="1.1" device="ATSAMRH707F18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
+<config configName="sam_rh707_ek" projectName="ip1553_bc_operation_blocking" configVersion="1.1" device="ATSAMRH707F18A" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.1">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -27,7 +27,7 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.4.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.harmony.Harmony3Library" version="1.5.4"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
@@ -47,9 +47,9 @@
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;cmsis&quot; x=&quot;320&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;core&quot; x=&quot;220&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;flexcom1&quot; x=&quot;22&quot; y=&quot;65&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;flexcom1&quot; x=&quot;19&quot; y=&quot;80&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;ip1553&quot; x=&quot;298&quot; y=&quot;86&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;stdio&quot; x=&quot;154&quot; y=&quot;79&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;stdio&quot; x=&quot;170&quot; y=&quot;70&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -1977,7 +1977,7 @@
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>..\src\config\sam_rh707_ek\definitions.h</file>
-         <hash>e06b5685b45b9f59a00a0191130f96bab97c640adbf7fd2f5c167a995f686d02</hash>
+         <hash>850922078dd6d75cb2c7e0ea5606c5008238719d914434eec5f813ff39f1f335</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\device.h</file>
@@ -1993,11 +1993,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\exceptions.c</file>
-         <hash>1fd383302c4cdf1cc6a804aa03b8abe8c1e5e5e9ea3450438c34dcea441e6b34</hash>
+         <hash>de00e84d46e0d8933ee2fae9d699e08456443d4f80ac78f87edada9c35a9d15f</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\initialization.c</file>
-         <hash>1fb7ef96fb264f3a0bc8d207c61e2c2af76bcdd5bff5cca8527a24a940022313</hash>
+         <hash>44ed99338fecc012617cbde229f44f536bc41c9be8eebac01168a89e2e695515</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\interrupts.c</file>
@@ -2029,7 +2029,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\flexcom\usart\plib_flexcom1_usart.c</file>
-         <hash>d37a48d6d364d006a0c4963772fdb14d58c37840b0d20d731776262fc1ce63ba</hash>
+         <hash>64d70028c012e549274628188de4e02ed1013f1c126379cf73cecfd548234c29</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\flexcom\usart\plib_flexcom1_usart.h</file>
@@ -2037,7 +2037,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\flexcom\usart\plib_flexcom_usart_local.h</file>
-         <hash>d7d8e1bab1992fd5471cbee03dfbe206d761d9e622c721c08f3546ef7d335b64</hash>
+         <hash>44c68d2efb80f2837e7bbcb39073972a6672c61ea2daf8f63e8c7e7da6e1208c</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\matrix\plib_matrix.c</file>
@@ -2049,7 +2049,7 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\mpu\plib_mpu.c</file>
-         <hash>dfbf41b89eb1904d5f9db82dd610c9621a8cac82d20a1d255715e6f45db74b27</hash>
+         <hash>78222d8b1605015d889282b7143ae6d257855ecc5f9f30d254e008ced20bdd28</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\mpu\plib_mpu.h</file>
@@ -2061,11 +2061,11 @@
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\nvic\plib_nvic.c</file>
-         <hash>3d89f9371ce4e519ebca69b0bda48169332067a95f4dbfdb90c6131ced1470c4</hash>
+         <hash>dd717044dd36bdaf83a852c95160c3e8184a8cd8eb45179b6fa65d159c1e7306</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\nvic\plib_nvic.h</file>
-         <hash>81e813a093101d546799e00723cbf7245e2d18471fa51c8d130c5809cecca03e</hash>
+         <hash>9936ac782115af41003255283fa2f603f4ff2212d16275b7c80ea8d067a9e208</hash>
       </entry>
       <entry>
          <file>..\src\config\sam_rh707_ek\peripheral\pio\plib_pio.c</file>
@@ -2417,7 +2417,7 @@
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\cmsis_version.h</file>
-         <hash>2de01ae2556a38eb82c389de23c701805ec63308cfbcf3f84cb12141589b0858</hash>
+         <hash>8cda7ac3ff6f0eb5e83c4fe613dd195151b24da54167f5c3c007e599a03f1edc</hash>
       </entry>
       <entry>
          <file>..\src\packs\CMSIS\CMSIS\Core\Include\core_cm7.h</file>
